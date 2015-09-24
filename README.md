@@ -3,4 +3,4 @@
 - To install them use the zip folder at the bottom of the page.
 
 # Staff
-- Barry Langley = Creator & Coder
+- Barry Langley - Creator & Coder

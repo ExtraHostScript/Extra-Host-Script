@@ -1,0 +1,45 @@
+#Script_Version 1.0.0
+#Made By The EHS Dev Team
+variables = %vars%, %users%, %command%
+
+#Give The Script A Name
+Script = %script_name%
+Version = %version%
+
+#Make A New Script With A New Version To Force It To Usage
+NewScript = %new_script%
+NewVersion = %new_version%
+
+#Actually give the scripts names
+%script_name% = "Script"
+%version% = "1.0.0"
+
+#Begin script here
+#In case the script crashes
+if %new_script% 
+{
+    return %script_name%
+}
+
+if %new_version%
+{
+    return %version%
+}
+
+#Define Users Here
+USERS function ( user_name )
+{
+    user_name = %USER%
+    user_password = %PASSWORD%
+	user_grants = %GRANTS%
+	user_auth = %AUTH%
+	user_banned = %ISBANNED%
+	user_command = %COMMAND%
+	user_hash = %HASH%
+	user_defaults = %DEFAULTS%
+}
+
+PASSWORD function ( user_password )
+{
+    %PASSWORD% = creation_link_pass && require = link_user
+}

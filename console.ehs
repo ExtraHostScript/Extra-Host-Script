@@ -2,7 +2,7 @@
 var Console
 {
     require ["script_master", "server_client", "user_client"];
-	require server.cli ["1.0.0"];
+    require server.cli ["1.0.0"];
     require db.cli ["1.0.0"];	
 }
 #Console Script
@@ -12,13 +12,13 @@ if require(s) = true
 	{
 	    function (new) ["opencli"], ["openserver"];
 		    if opencli 
-			{
-			    return true
-			}
-			if openserver
-			{
-			    return true
-			}
+		    {
+		    return true
+		    }
+		    if openserver
+		    {
+		    return true
+		    }
 		else [open. "require(s)"];
 	}
 }

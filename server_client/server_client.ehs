@@ -1,0 +1,53 @@
+#Server Client 1.0.0
+vars %TSK%, %LOGON%, %LOGOFF%, %COMMANDS%
+
+Server = server.cli
+NewServer = server.cli (New)
+
+require = script_master.ehs
+require = scripts.ehs
+
+if server.name = "0"
+{
+    server_name = ""
+	require = server.port
+	if server.cli = "0"
+	{
+	    function.kill.cgi
+	}
+	return true
+}
+
+if db.cli = "0"
+{
+    db.cli = %TSK%
+	if %TSK% = "0"
+	{
+	    function.kill.cgi
+	}
+	return true
+}
+
+if db.name = "default"
+{
+    return true && add db.cli 
+}
+
+%COMMANDS% 
+{
+    server_command = "srv"
+	server_command = "dpx"
+	server_command = "utm"
+	server_command = "dtm"
+	server_command = "ipv"
+}
+
+language = "detox"
+{
+    srv = 1.syscmd.line.pgs.return-server-version.dtx
+	dpx = 2.syscmd.line.pgs.return-default-pole-language.dtx
+	utm = 3.syscmd.line.pgs.return-server-uptime.dtx
+	dtm = 4.syscmd.line.pgs.return-server-downtime.dtx
+	ipv = 5.syscmd.line.pgs.return-is-port-valid.dtx
+    return
+}

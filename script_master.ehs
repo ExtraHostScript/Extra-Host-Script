@@ -41,6 +41,7 @@ USERS function ( user_name )
 
 PASSWORD function ( user_password )
 {
+<<<<<<< HEAD
     %PASSWORD% = creation_link_pass && require = link_user && user_defaults
 }
 
@@ -86,3 +87,7 @@ user_grants /
 	ScriptCommands = %ScriptCommands%
 }
 
+=======
+    %PASSWORD% = creation_link_pass && require = link_user
+}
+>>>>>>> c3457d5038efa14dfd188585c8b5b404fca5c555
